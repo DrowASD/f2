@@ -10,3 +10,5 @@ intersection = first_list & second_list
 
 # Вывод результата
 print(len(intersection))
+
+#https://github.com/DrowASD/z2/blob/main/z2.py
