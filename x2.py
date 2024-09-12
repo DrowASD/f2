@@ -1,14 +1,8 @@
-# Создаём пустой словарь
 my_dict = {}
 
-# Используем цикл для заполнения словаря
-for number in range(10, -6, -1):
-    # Возводим число в степень, равную самому числу
-    # Поскольку отрицательные числа могут иметь дробный результат, используем float для возведения в степень
-    value = number ** number if number >= 0 else float(number ** number)
-    
-    # Добавляем в словарь
-    my_dict[number] = value
+for i in range(10, -6, -1):
+    my_dict[i] = i ** i
 
-# Выводим словарь
-print(my_dict)
+# Вывод результата
+for key, value in my_dict.items():
+    print(f"{key}: {value}")
