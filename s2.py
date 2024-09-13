@@ -1,22 +1,22 @@
-# Родительский класс Transport
 class Transport:
     def __init__(self, name, max_speed, mileage):
         self.name = name
         self.max_speed = max_speed
         self.mileage = mileage
 
-    # Метод seating_capacity для отображения вместимости транспорта
     def seating_capacity(self, capacity):
-        return f"Вместимость одного автобуса {self.name}: {capacity} пассажиров"
+        return f"Вместимость одного транспортного средства {self.name}: {capacity} пассажиров"
 
-# Дочерний класс Autobus, наследующий Transport
 class Autobus(Transport):
-    # Переопределение метода seating_capacity с значением по умолчанию 50
-    def seating_capacity(self, capacity=50):
-        return super().seating_capacity(capacity)
+    def __init__(self, name, max_speed, mileage):
+        super().__init__(name, max_speed, mileage)
 
-# Создание объекта класса Autobus
-bus = Autobus("Renaul Logan", 180, 12)
+    def seating_capacity(self):
+        # Переопределяем метод с заданным значением по умолчанию
+        return f"Вместимость одного автобуса {self.name}: 50 пассажиров"
 
-# Вывод вместимости автобуса
-print(bus.seating_capacity())  # Вместимость по умолчанию 50
+# Создаем экземпляр класса Autobus
+bus = Autobus("Renault Logan", 120, 10)
+
+# Вызываем метод seating_capacity без аргумента
+print(bus.seating_capacity())
